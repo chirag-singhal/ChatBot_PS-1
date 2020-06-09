@@ -20,6 +20,7 @@ Make sure you have **pip** installed. Open up the terminal and type -
     virtualenv chatbot
     source chatbot/bin/activate
     pip install django
+    pip install pymysql
     cd databse_chatbot
     python3 manage.py createsuperuser
     python3 manage.py makemigrations
