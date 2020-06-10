@@ -1,9 +1,4 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Jun  9 18:07:13 2020
 
-@author: Aman Maheshwari
-"""
 
 def response_generation(s):
     from django.db import connection
