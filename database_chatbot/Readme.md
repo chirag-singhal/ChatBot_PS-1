@@ -12,7 +12,7 @@
 
 ## How to setup?
 
-Make sure you have **pip** installed. Open up the terminal and type -
+Make sure you have **pip** and mysql is installed. Change the database details in `settings.py` Open up the terminal and type -
 
     git clone https://github.com/chirag-singhal/ChatBot_PS-1.git
     cd ChatBot_PS-1
@@ -21,6 +21,7 @@ Make sure you have **pip** installed. Open up the terminal and type -
     source chatbot/bin/activate
     pip install django
     pip install pymysql
+    pip install djangorestframework
     cd databse_chatbot
     python3 manage.py createsuperuser
     python3 manage.py makemigrations
