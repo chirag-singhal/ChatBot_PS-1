@@ -5,7 +5,7 @@ from rest_framework.parsers import JSONParser
 from queries.serializers import  query1Serializer # Our Serializer Classes
 from rest_framework.decorators import api_view
 # from nlp_module import respond
-import nlp_module
+from nlp_module import nlp_module
 from nlp_module import respond
 from .response_generator_1 import response_generation
 import json
