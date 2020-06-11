@@ -5,6 +5,8 @@ from rest_framework.parsers import JSONParser
 from queries.serializers import  query1Serializer # Our Serializer Classes
 from rest_framework.decorators import api_view
 # from nlp_module import respond
+import nlp_module
+from nlp_module import respond
 from .response_generator_1 import response_generation
 import json
 
@@ -14,11 +16,11 @@ def message_list(request, sender=None, receiver=None):
     """
     List all required messages, or create a new message.
     """
+    nlp_out = nlp_module()
     if request.method == 'POST':
         print(request.body)
         var=json.loads(request.body)
         input_question=var["messages"]
-        # nlp_out = respond(input_question)
-        final_out = response_generation(input_question)
+        final_out = response_generation(nlp_out.respond(input_question))
         body = {"message": final_out}
         return JsonResponse(body, status=200)
