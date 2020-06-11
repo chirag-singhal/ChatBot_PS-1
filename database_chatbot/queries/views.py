@@ -4,7 +4,7 @@ from django.views.decorators.csrf import csrf_exempt
 from rest_framework.parsers import JSONParser
 from queries.serializers import  query1Serializer # Our Serializer Classes
 from rest_framework.decorators import api_view
-from nlp_module import nlp_module
+from .nlp_module import nlp_module
 #from nlp_module import respond (not needed)
 from .response_generator_1 import response_generation
 import json
