@@ -17,7 +17,7 @@ def message_list(request, sender=None, receiver=None):
     if request.method == 'POST':
         var=json.dumps(request)
         input_question=var["messages"]
-        nlp_out = respond(input_question)
-        final_out = response_generation(nlp_out)
+        nlp_out.respond(input_question)
+        final_out.response_generation(nlp_out)
         body = {"message": final_out}
         return JsonResponse(body, status=200)
