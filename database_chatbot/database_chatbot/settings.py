@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'database_chatbot.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'mysql',
+        'NAME': 'admindb',
         'USER': 'admin',
         'PASSWORD': 'admin123',
         'HOST': 'localhost',

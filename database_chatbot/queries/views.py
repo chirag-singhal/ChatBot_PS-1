@@ -9,13 +9,15 @@ from .nlp_module import nlp_module
 from .response_generator_1 import response_generation
 import json
 
+
+nlp_out = nlp_module()
+
 @api_view(['GET', 'POST'])
 @csrf_exempt                         
 def message_list(request, sender=None, receiver=None):
     """
     List all required messages, or create a new message.
     """
-    nlp_out = nlp_module()
     if request.method == 'POST':
         print(request.body)
         var=json.loads(request.body)

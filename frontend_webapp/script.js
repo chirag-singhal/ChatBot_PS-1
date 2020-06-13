@@ -65,6 +65,7 @@ $(document).ready(() => {
         $.ajax({
             url: "http://localhost:8000/api/messages/",
             type: 'POST',
+            crossDomain: true,
             data: JSON.stringify({ "messages": userMessage }),
             success: function(data) {
                 console.log(data)

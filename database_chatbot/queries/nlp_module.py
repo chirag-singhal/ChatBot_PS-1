@@ -42,4 +42,4 @@ class nlp_module:
 
         #for idx, distance in results[0:self.closest_n]:
             #print(self.corpus[idx].strip(), "(Score: %.4f)" % (1-distance))
-        return self.questions[results[0][0]];
+        return self.questions[results[0][0]]
