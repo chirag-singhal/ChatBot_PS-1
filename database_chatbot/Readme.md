@@ -21,6 +21,7 @@ Make sure you have **pip** and mysql is installed. Change the database details i
     source chatbot/bin/activate
     pip install django
     pip install pymysql
+    pip install django-import-export
     pip install djangorestframework
     cd databse_chatbot
     python3 manage.py createsuperuser
