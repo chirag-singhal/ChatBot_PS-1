@@ -9,32 +9,32 @@ import scipy.spatial
 import string
 
 class nlp_module:
-    
+
     def __init__(self):
         # Find the closest 5 sentences of the corpus for each query sentence based on cosine similarity
-        self.closest_n = 5
-        self.remove_punct_dict = dict((ord(punct), None) for punct in string.punctuation)
-        self.embedder = SentenceTransformer('bert-base-nli-mean-tokens') 
-    
+        self.closest_n = 5 #No. of closest sentences from the corpus desired
+        self.remove_punct_dict = dict((ord(punct), None) for punct in string.punctuation)  #Removes the punctuation
+        self.embedder = SentenceTransformer('bert-base-nli-mean-tokens')
+
         # Corpus with example sentences
 
         self.questions = self.getData()  #change this for input
-        self.corpus = self.questions.lower().translate(self.remove_punct_dict).splitlines()
-        self.questions=self.questions.splitlines()
-        self.corpus_embeddings = self.embedder.encode(self.corpus)
+        self.corpus = self.questions.lower().translate(self.remove_punct_dict).splitlines() #Removes punctuation from the corpus
+        self.questions=self.questions.splitlines() #Splits the corpus into different lines
+        self.corpus_embeddings = self.embedder.encode(self.corpus) #Generates feature vectors for the corpus
 
     #import data
-    def getData(self) : 
+    def getData(self) : #function to get the predefined data
         f = open("./myqs.txt", "r")
         data = f.read()
         return data
 
     def respond(self,query):
-        query.lower().translate(self.remove_punct_dict)
-        query_embedding=self.embedder.encode([query])[0]
-        distances = scipy.spatial.distance.cdist([query_embedding], self.corpus_embeddings, "cosine")[0]
+        query.lower().translate(self.remove_punct_dict) #removes punctuations from the input
+        query_embedding=self.embedder.encode([query])[0] #generates a feature vector for the inputted question
+        distances = scipy.spatial.distance.cdist([query_embedding], self.corpus_embeddings, "cosine")[0] #Calculates the cosine similarity between the vectors
         results = zip(range(len(distances)), distances)
-        results = sorted(results, key=lambda x: x[1])
+        results = sorted(results, key=lambda x: x[1]) #sorts the distances
 
         #print("\n\n======================\n\n")
         #print("Query:", query)
