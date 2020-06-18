@@ -2,7 +2,9 @@
 input: string of question
 We have a corpus with various sentences. Then, for a given query sentence,
 we want to find the most similar sentence in this corpus.
-This script outputs for various queries the most similar sentence in the corpus.
+The object has to be instantiated only once when the server is starting
+The respond function then outputs for various queries the most similar sentence in the corpus.
+The getData function retreives all training questions from the database
 """
 from sentence_transformers import SentenceTransformer
 import scipy.spatial
