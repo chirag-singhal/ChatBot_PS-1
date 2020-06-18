@@ -2,7 +2,7 @@
 input: string of question
 We have a corpus with various sentences. Then, for a given query sentence,
 we want to find the most similar sentence in this corpus.
-This script outputs for various queries the top 5 most similar sentences in the corpus.
+This script outputs for various queries the most similar sentence in the corpus.
 """
 from sentence_transformers import SentenceTransformer
 import scipy.spatial
@@ -11,12 +11,12 @@ import string
 class nlp_module:
 
     def __init__(self):
-        # Find the closest 5 sentences of the corpus for each query sentence based on cosine similarity
+        # Find the closest sentence of the corpus for each query sentence based on cosine similarity
         self.closest_n = 5 #No. of closest sentences from the corpus desired
         self.remove_punct_dict = dict((ord(punct), None) for punct in string.punctuation)  #Removes the punctuation
         self.embedder = SentenceTransformer('bert-base-nli-mean-tokens')
 
-        # Corpus with example sentences
+        # Corpus with training sentences
 
         self.questions = self.getData()  #change this for input
         self.corpus = self.questions.lower().translate(self.remove_punct_dict).splitlines() #Removes punctuation from the corpus
@@ -24,6 +24,7 @@ class nlp_module:
         self.corpus_embeddings = self.embedder.encode(self.corpus) #Generates feature vectors for the corpus
 
     #import data
+    #Change to integrate with database
     def getData(self) : #function to get the predefined data
         f = open("./myqs.txt", "r")
         data = f.read()
