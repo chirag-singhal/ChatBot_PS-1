@@ -7,6 +7,7 @@ This script outputs for various queries the top 5 most similar sentences in the 
 from sentence_transformers import SentenceTransformer
 import scipy.spatial
 import string
+from .models import Query
 
 class nlp_module:
     
@@ -25,9 +26,11 @@ class nlp_module:
 
     #import data
     def getData(self) : 
-        f = open("./myqs.txt", "r")
-        data = f.read()
-        return data
+ 	data = ""
+	queries_all = Query.objects.all()
+	for q in queries_all:
+	    data = "\n" + q.intent
+	return data
 
     def respond(self,query):
         query.lower().translate(self.remove_punct_dict)
