@@ -1,5 +1,5 @@
 $(document).ready(() => {
-    let $userName = "Lakshaya";
+    let $userName = "chat-genie";
     $("#form-start").on("submit", (event) => {
         event.preventDefault();
         $userName = $("#username").val();
