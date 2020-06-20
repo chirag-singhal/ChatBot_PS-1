@@ -1,4 +1,10 @@
 #!/usr/bin/env python
+'''
+Automatically created for each Django project.
+Sets the DJANGO_SETTINGS_MODULE environment variable so that it
+points to your project’s settings.py file.
+
+'''
 import os
 import sys
 
