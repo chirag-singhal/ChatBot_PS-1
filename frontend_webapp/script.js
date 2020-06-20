@@ -63,7 +63,7 @@ $(document).ready(() => {
             ];
         else if (/bye/.test(message)) reply = [`Bye ${$userName}. See you soon!`];
         $.ajax({
-            url: "http://localhost:8000/api/messages/",
+            url: "http://104.215.195.198/api/messages/",
             type: 'POST',
             crossDomain: true,
             data: JSON.stringify({ "messages": userMessage }),

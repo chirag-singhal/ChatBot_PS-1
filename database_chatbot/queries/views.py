@@ -22,6 +22,6 @@ def message_list(request, sender=None, receiver=None):
         print(request.body)
         var=json.loads(request.body) #stores user input as a string
         input_question=var["messages"] 
-        final_out = response_generation(nlp_out.respond(input_question)) #calls the functions and stores final response
+        final_out = nlp_out.respond(input_question) #calls the functions and stores final response
         body = {"message": final_out}
         return JsonResponse(body, status=200) #returns response to frontend

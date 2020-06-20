@@ -26,11 +26,12 @@ class nlp_module:
 
     #import data
     def getData(self) : 
- 	data = ""
-	queries_all = Query.objects.all()
-	for q in queries_all:
-	    data = "\n" + q.intent
-	return data
+        data = ""
+        queries_all = Query.objects.all()
+        for q in queries_all:
+            data += "\n" + q.intent
+        data = data[1:]
+        return data
 
     def respond(self,query):
         query.lower().translate(self.remove_punct_dict)
