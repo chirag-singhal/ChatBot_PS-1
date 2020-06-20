@@ -1,4 +1,9 @@
 #!/usr/bin/env python
+'''
+Sets the DJANGO_SETTINGS_MODULE environment variable so that it
+points to your project’s settings.py file.
+
+'''
 import os
 import sys
 
