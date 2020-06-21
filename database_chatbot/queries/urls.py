@@ -1,4 +1,9 @@
 # botinfoapi/urls.py
+"""  This module is pure Python code and is a mapping between URL path expressions to Python functions.
+For more information visit https://docs.djangoproject.com/en/3.0/topics/http/urls/
+    
+    """
+
 from django.urls import include, path
 from rest_framework import routers
 from . import views
