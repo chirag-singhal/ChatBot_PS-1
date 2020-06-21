@@ -17,10 +17,17 @@ nlp_out = nlp_module()
 def message_list(request, sender=None, receiver=None):
     """
     List all required messages, or create a new message.
+    
+    Args:
+        request(Json): Contains the JSON of the user input
+        sender:To store the id of the sender, default = None
+        receiver : To store the id of the reciever, default = None
+    Returns:
+        body(dictionary): Returned as JSON to the frontend using JsonResponse subclass
     """
     if request.method == 'POST':
         print(request.body)
-        var=json.loads(request.body) #stores user input as a string
+        var=json.loads(request.body) #converts from JSON and stores user input as a dictionary
         input_question=var["messages"] 
         final_out = response_generation(nlp_out.respond(input_question)) #calls the functions and stores final response
         body = {"message": final_out}
