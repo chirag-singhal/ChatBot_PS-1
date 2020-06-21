@@ -10,6 +10,9 @@ from django.db import models
 
 class Query(models.Model):
     '''
+    Class for storing the fields as class attributes.
+    intent and response are database field of the model. 
+    They are specified as class attributes, and map to a database column.
     '''
     intent = models.CharField(max_length=2000)
     response = models.CharField(max_length=5530)
