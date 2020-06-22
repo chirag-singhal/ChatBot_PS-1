@@ -19,10 +19,7 @@ Make sure you have **pip** and mysql is installed. Change the database details i
     pip install virtualenv
     virtualenv chatbot
     source chatbot/bin/activate
-    pip install django
-    pip install pymysql
-    pip install django-import-export
-    pip install djangorestframework
+    pip install -r requirements.txt
     cd databse_chatbot
     python3 manage.py createsuperuser
     python3 manage.py makemigrations
