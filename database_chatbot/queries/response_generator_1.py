@@ -1,7 +1,7 @@
 def response_generation(s,input_question):
     from django.db import connection
     with connection.cursor() as cursor:
-        if s=="-1":
+        if s==-1:
             try:
                 cursor.execute("INSERT INTO table2(unanswered_query) VALUES(%s)",[input_question])
             except:
