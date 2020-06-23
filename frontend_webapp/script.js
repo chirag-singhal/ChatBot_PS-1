@@ -4,6 +4,7 @@ $(document).ready(() => {
         event.preventDefault();
         $userName = $("#username").val();
         $("#landing").slideUp(300);
+        $(".greet").html(`Hi ${$userName}! I am Chat Genie. I would love to chat with you and solve all your queries. Kindly type your message below.`);
         setTimeout(() => {
             $("#start-chat").html("Continue chat");
         }, 300);

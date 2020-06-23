@@ -1,6 +1,7 @@
 html {
   font-family: Arial, sans-serif;
   font-size: 16px;
+  background-color:#1f0b30e3;
 }
 
 
@@ -176,6 +177,12 @@ span.fas.fa-robot {
   overflow-x: hidden;
   overflow-y: scroll;
 }
+
+.greet{
+  color: rgb(15, 77, 10);
+  padding-left:12px;
+}
+
 
 .post {
   position: relative;
