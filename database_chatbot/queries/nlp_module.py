@@ -75,4 +75,9 @@ class nlp_module:
         distances = scipy.spatial.distance.cdist([query_embedding], self.corpus_embeddings, "cosine")[0]
         results = zip(range(len(distances)), distances)
         results = sorted(results, key=lambda x: x[1])
-        return self.questions[results[0][0]]
+        
+        max_score=1-results[0][1]
+        if max_score>0.75:
+            return self.questions[results[0][0]]
+        else:
+            return -1
