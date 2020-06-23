@@ -7,6 +7,7 @@
 '''
 from django.contrib import admin
 from .models import Query
+from .models import Unanswered_Query
 from import_export.admin import ImportExportModelAdmin #Importing import_export module
 from import_export import resources
 from django.forms import ValidationError
@@ -55,3 +56,4 @@ class QueryAdmin(ImportExportModelAdmin):
 
 # Register your models here.
 admin.site.register(Query, QueryAdmin)
+admin.site.register(Unanswered_Query, QueryAdmin)
