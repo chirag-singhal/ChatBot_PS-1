@@ -2,7 +2,7 @@ def response_generation(s,input_question):
     from django.db import connection
     with connection.cursor() as cursor:
         if s==-1:
-            cursor.execute("SELECT * FROM table2")
+            cursor.execute("SELECT * FROM Unanswered_query")
             for x in cursor:
                 if x[0]==input_question:
                     s2="Sorry, cannot understand the question from provided information."
