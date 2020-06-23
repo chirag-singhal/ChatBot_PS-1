@@ -19,3 +19,14 @@ class Query(models.Model):
     
     def __str__(self):
         return 'Intent: ' + self.intent
+
+class Unanswered_Query(models.Model):
+    '''
+    Class for storing the fields as class attributes.
+    unanswered_query are database field of the model. 
+    They are specified as class attributes, and map to a database column.
+    '''
+    unanswered_query = models.CharField(max_length=2000)
+    
+    def __str__(self):
+        return 'Query: ' + self.unanswered_query
