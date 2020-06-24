@@ -16,7 +16,6 @@ def response_generation(s,input_question):
         sql_query=("SELECT response from Query WHERE intent=%s")
         cursor.execute(sql_query,[s])
         for x in cursor:
-            print(x)
             s1=x
         s2=''.join(s1)
     return s2
