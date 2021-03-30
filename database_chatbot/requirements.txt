@@ -25,7 +25,7 @@ numpy==1.18.5
 odfpy==1.4.1
 openpyxl==3.0.3
 packaging==20.4
-Pygments==2.6.1
+Pygments==2.7.4
 PyMySQL==0.9.3
 pyparsing==2.4.7
 pytz==2020.1
